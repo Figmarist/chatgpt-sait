@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOKO - Создание современных сайтов</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">SOKO</div>
+        <nav onload="animateNavigation()">
+            <ul class="nav-links">
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Добро пожаловать в SOKO</h1>
+        <p>Ваш партнер в веб-разработке!</p>
+        <div class="slider">
+          <img id="img-1" src="https://melisheff.ru/upload/iblock/9b0/9b066d48aeff909789f29bfbba84618b.jpg" alt="Image 1"/>
+          <img id="img-2" src="https://findesk.ru/upload/iblock/bb6/bb66b61371ef1b735fea7088ad08f6ad.jpg" alt="Image 2"/>
+          <img id="img-3" src="https://assets-global.website-files.com/61754c216e46033fd79c7ae0/6405f20afecdfe74f602b6f3_621285022481974a51e62142_graphics-designer-editor-workplace-concept-min.jpeg" alt="Image 3"/>
+        </div>
+        <div class="navigation-buttons">
+          <span class="dot active" onclick="changeSlide(0)"></span>
+          <span class="dot" onclick="changeSlide(1)"></span>
+          <span class="dot" onclick="changeSlide(2)"></span>
+        </div>
+        <a href="#contact" class="cta-button">Начать</a>
+    </section>
+
+    <section id="services" class="services">
+        <h1>Наши услуги</h1>
+        <hr>
+        <div class="service">
+            <h3>Индивидуальный веб-дизайн</h3>
+            <img src="https://cdn-edge.kwork.ru/pics/t3/90/26164387-642430ceaff66.jpg" alt="sait">
+            <p>Мы создаем уникальные и потрясающие сайты, соответствующие вашему бренду.</p>
+        </div>
+        <div class="service">
+            <h3>Веб-разработка</h3>
+            <img src="https://u.9111s.ru/uploads/202304/14/ff805a6cdd5ab31d2d979ea92c5ecf39.jpg" alt="sait">
+            <p>Наша команда экспертов оживит ваш сайт с использованием последних технологий.</p>
+        </div>
+        <div class="service">
+            <h3>Оптимизация для поисковых систем (SEO)</h3>
+            <img src="https://www.moscowbase.ru/SEO1910.jpg" alt="sait">
+            <p>Улучшите видимость вашего сайта и привлекайте больше трафика с помощью наших услуг SEO.</p>
+        </div>
+    </section>
+
+    <section id="portfolio" class="hero">
+        <h2 style="font-size: 4em;">Наше портфолио</h2>
+        <hr>
+        <div class="portfolio-item">
+            <h3>Проект 1</h3>
+            <img src="https://des-life.ru/wp-content/uploads/website-design-for-promotion-5.jpeg" alt="Проект 1">
+        </div>
+        <hr>
+        <div class="portfolio-item">
+            <h3>Проект 2</h3>
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/a3182859575889.5a2759f22c863.jpg" alt="Проект 2">
+        </div>
+        <hr>
+        <div class="portfolio-item">
+            <h3>Проект 3</h3>
+            <img src="https://www.succes-marketing.com/wp-content/uploads/landing-page-conversion-ideale-1024x640.jpg" alt="Проект 3">
+        </div>
+    </section>
+
+    <footer id="contact" class="footer">
+        <div class="footer-content">
+            <div style="font-size: 35px;">Обратная связь</div>
+            <p>Email: info@soko.com</p>
+            <p>Телефон: 123-456-7890</p>
+            <p>Адрес: ул. Веб-разработки, г. Москва, Россия</p>
+        </div>
+        <div class="footer-social">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+    <script>
+      var imgs = document.querySelectorAll('.slider img');
+  var dots = document.querySelectorAll('.dot');
+  var currentImg = 0; // индекс первого изображения
+  var interval = 3000; // продолжительность (скорость) слайда
+  
+  function changeSlide(n) {
+    for (var i = 0; i < imgs.length; i++) { // сброс
+      imgs[i].style.opacity = 0;
+      dots[i].classList.remove('active');
+    }
+    currentImg = n;
+    imgs[currentImg].style.opacity = 1;
+    dots[currentImg].classList.add('active');
+  }
+  
+  function autoChangeSlide() {
+    var timer = setInterval(function() {
+      currentImg = (currentImg + 1) % imgs.length; // обновление индекса
+      changeSlide(currentImg);
+    }, interval);
+  }
+  
+  autoChangeSlide();
+  
+    </script>
+        <script>
+          function animateNavigation() {
+              const navLinks = document.querySelectorAll('.nav-links a');
+              navLinks.forEach((link, index) => {
+                  link.style.transition = `transform 0.5s ease ${index * 0.1}s`;
+                  link.style.transform = 'rotateY(360deg)';
+              });
+          }
+      </script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #3498db;
+  color: white;
+  padding: 1rem;
+}
+
+
+h1, h2, h3 {
+  color: #333;
+  text-align: center;
+  font-size: 220%; /* увеличивает шрифт заголовков в 1.5 раза */
+}
+
+p{
+  font-size: 150%;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff; /* Цвет текста - белый */
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #FFD700; /* Изменение цвета текста при наведении - желтый */
+}
+
+
+.logo {
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Hero Section Styles */
+.hero {
+  text-align: center;
+  padding: 4rem 0;
+  background-color: #f2f2f2;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Services Section Styles */
+.services {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.service {
+  margin-bottom: 2rem;
+}
+
+/* Portfolio Section Styles */
+.portfolio {
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+
+.portfolio-item {
+  margin: 2rem 0;
+}
+
+.portfolio-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.slider {
+  width: 100%; /* Пример: задаем ширину слайдера */
+  max-width: 100%; 
+  height: 700px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center; /* Центрируем слайдер по горизонтали */
+  margin: 0 auto; /* Добавляем отступы по бокам, чтобы центрировать слайдер */
+}
+
+.slider img {
+  height: 750px;
+  position: absolute;
+  top: 0;
+}
+
+.slider img:first-child {
+  z-index: 1;
+}
+
+.slider img:nth-child(2) {
+  z-index: 0;
+}
+
+.navigation-buttons {
+  margin: 0.5em 0 ;
+  text-align: center;
+  position: relative;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #3498db;
+  color: white;
+  text-align: left;
+  padding: 20px 40px ;
+}
+
+.footer-content {
+  margin-bottom: 1rem;
+}
+
+.footer-social a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.service {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.service img {
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  max-width: 750px; /* увеличивает максимальную ширину изображений в 750px */
+}
+
+.service img:hover {
+  transform: scale(1.05);
+}
